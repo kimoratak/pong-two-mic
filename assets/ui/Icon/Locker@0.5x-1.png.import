@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8liv6nfcd8a5"
-path="res://.godot/imported/full-pong.png-dce799a885a6f7fc4825d418d6a4e66d.ctex"
+uid="uid://6l68aujm12k2"
+path="res://.godot/imported/Locker@0.5x-1.png-89963139ec8f2a72f004f0f9ccbd64fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/full-pong.png"
-dest_files=["res://.godot/imported/full-pong.png-dce799a885a6f7fc4825d418d6a4e66d.ctex"]
+source_file="res://assets/ui/Icon/Locker@0.5x-1.png"
+dest_files=["res://.godot/imported/Locker@0.5x-1.png-89963139ec8f2a72f004f0f9ccbd64fb.ctex"]
 
 [params]
 
