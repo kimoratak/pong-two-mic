@@ -1,0 +1,216 @@
+[gd_scene load_steps=26 format=3 uid="uid://crcft2cl5neu2"]
+
+[ext_resource type="Texture2D" uid="uid://c3bi00k2ipmdm" path="res://assets/player/full-pong.png" id="1_bbwac"]
+[ext_resource type="Script" uid="uid://bgyjnh70sw0cc" path="res://sence/character_body_2d.gd" id="1_xepao"]
+[ext_resource type="Shader" uid="uid://qy71rntve2ao" path="res://assets/fonts/flicker.gdshader" id="2_tnxuq"]
+[ext_resource type="Texture2D" uid="uid://bbtdgr52tl7n" path="res://assets/player/bullet/fire.png" id="3_tnxuq"]
+[ext_resource type="AudioStream" uid="uid://c601agvl43glg" path="res://assets/audio/synth_laser_03.ogg" id="4_brb2o"]
+[ext_resource type="AudioStream" uid="uid://cj1gf86o55pb0" path="res://assets/audio/jump.mp3" id="5_wjh5e"]
+[ext_resource type="AudioStream" uid="uid://dr0w1sbu01k" path="res://assets/audio/shot_01.ogg" id="6_0u0oh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_brb2o"]
+shader = ExtResource("2_tnxuq")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/amount = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk8kw"]
+atlas = ExtResource("1_bbwac")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk0kx"]
+atlas = ExtResource("1_bbwac")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opofo"]
+atlas = ExtResource("1_bbwac")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibxnq"]
+atlas = ExtResource("1_bbwac")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wm51f"]
+atlas = ExtResource("1_bbwac")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbfp8"]
+atlas = ExtResource("1_bbwac")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xepao"]
+atlas = ExtResource("1_bbwac")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4x2u4"]
+atlas = ExtResource("1_bbwac")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c8p5"]
+atlas = ExtResource("1_bbwac")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1h78"]
+atlas = ExtResource("1_bbwac")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tnxuq"]
+atlas = ExtResource("1_bbwac")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brb2o"]
+atlas = ExtResource("1_bbwac")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wjh5e"]
+atlas = ExtResource("1_bbwac")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cch5"]
+atlas = ExtResource("1_bbwac")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uk4pc"]
+atlas = ExtResource("1_bbwac")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0u0oh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pk8kw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rk0kx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opofo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibxnq")
+}],
+"loop": true,
+"name": &"idle_gun",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wm51f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbfp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xepao")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4x2u4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1c8p5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1h78")
+}],
+"loop": true,
+"name": &"jump_gun",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tnxuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_brb2o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wjh5e")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cch5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uk4pc")
+}],
+"loop": true,
+"name": &"walk_gun",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_opofo"]
+radius = 4.0
+height = 14.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 45
+script = ExtResource("1_xepao")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_brb2o")
+sprite_frames = SubResource("SpriteFrames_0u0oh")
+animation = &"idle_gun"
+autoplay = "idle"
+frame_progress = 0.998641
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_opofo")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+
+[node name="Times" type="Node" parent="."]
+
+[node name="CooldownTimer" type="Timer" parent="Times"]
+wait_time = 0.4
+one_shot = true
+
+[node name="FireTimer" type="Timer" parent="Times"]
+wait_time = 0.1
+
+[node name="InvincibilityTimer" type="Timer" parent="Times"]
+wait_time = 0.6
+one_shot = true
+
+[node name="Fire" type="Node2D" parent="."]
+
+[node name="FireRight" type="Sprite2D" parent="Fire"]
+position = Vector2(-12, 3)
+texture = ExtResource("3_tnxuq")
+flip_h = true
+
+[node name="FireLeft" type="Sprite2D" parent="Fire"]
+position = Vector2(12, 3)
+texture = ExtResource("3_tnxuq")
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="fireSound" type="AudioStreamPlayer2D" parent="Sounds"]
+stream = ExtResource("4_brb2o")
+area_mask = 2
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("5_wjh5e")
+
+[node name="DamageSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("6_0u0oh")
+
+[connection signal="timeout" from="Times/CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="Times/FireTimer" to="." method="_on_fire_timer_timeout"]
+[connection signal="timeout" from="Times/InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]

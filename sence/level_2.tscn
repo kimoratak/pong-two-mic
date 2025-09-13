@@ -1,19 +1,16 @@
-[gd_scene load_steps=14 format=4 uid="uid://ob4u8jgtbwhf"]
+[gd_scene load_steps=11 format=4 uid="uid://ccrkpqml4iyvn"]
 
-[ext_resource type="Script" uid="uid://mxb6qx2uv6kj" path="res://script/level.gd" id="1_0p5kj"]
-[ext_resource type="Texture2D" uid="uid://6c8eo2lm8crh" path="res://assets/background/j4.png" id="1_inkuo"]
-[ext_resource type="Texture2D" uid="uid://dauh0oa3i6a5u" path="res://assets/background/j3.png" id="2_wvqpg"]
-[ext_resource type="Texture2D" uid="uid://gf56baod5a6q" path="res://assets/background/j2.png" id="3_bty0w"]
-[ext_resource type="Texture2D" uid="uid://lak08qsuk58w" path="res://assets/background/j1.png" id="4_oo0cm"]
-[ext_resource type="PackedScene" uid="uid://i3lq0veq1xve" path="res://sence/eagle.tscn" id="5_d1vw2"]
-[ext_resource type="PackedScene" uid="uid://crcft2cl5neu2" path="res://sence/character_body_2d.tscn" id="5_oo0cm"]
-[ext_resource type="Texture2D" uid="uid://c7gqk2grtbo82" path="res://assets/tileset/tileset.png" id="6_d1vw2"]
-[ext_resource type="PackedScene" uid="uid://mcthic5qny2y" path="res://sence/portal.tscn" id="7_522hw"]
-[ext_resource type="PackedScene" uid="uid://bm2h1q6udgp8o" path="res://sence/gun.tscn" id="9_522hw"]
-[ext_resource type="PackedScene" uid="uid://bpeuwdete2650" path="res://sence/ui.tscn" id="11_2tp86"]
+[ext_resource type="Texture2D" uid="uid://6c8eo2lm8crh" path="res://assets/background/j4.png" id="1_2vrab"]
+[ext_resource type="Texture2D" uid="uid://dauh0oa3i6a5u" path="res://assets/background/j3.png" id="2_8a6dd"]
+[ext_resource type="Texture2D" uid="uid://gf56baod5a6q" path="res://assets/background/j2.png" id="3_1nqc0"]
+[ext_resource type="Texture2D" uid="uid://lak08qsuk58w" path="res://assets/background/j1.png" id="4_436bb"]
+[ext_resource type="Texture2D" uid="uid://c7gqk2grtbo82" path="res://assets/tileset/tileset.png" id="5_6pm65"]
+[ext_resource type="PackedScene" uid="uid://mcthic5qny2y" path="res://sence/portal.tscn" id="6_ga4fq"]
+[ext_resource type="PackedScene" uid="uid://crcft2cl5neu2" path="res://sence/character_body_2d.tscn" id="7_4olnb"]
+[ext_resource type="PackedScene" uid="uid://i3lq0veq1xve" path="res://sence/eagle.tscn" id="8_rlykr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0p5kj"]
-texture = ExtResource("6_d1vw2")
+texture = ExtResource("5_6pm65")
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
@@ -275,8 +272,7 @@ texture = ExtResource("6_d1vw2")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0p5kj")
 
-[node name="level1" type="Node2D"]
-script = ExtResource("1_0p5kj")
+[node name="level2" type="Node2D"]
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -284,39 +280,39 @@ script = ExtResource("1_0p5kj")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(964, 103)
-texture = ExtResource("1_inkuo")
+texture = ExtResource("1_2vrab")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(1925, 99)
-texture = ExtResource("2_wvqpg")
+texture = ExtResource("2_8a6dd")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(2890, 94)
-texture = ExtResource("3_bty0w")
+texture = ExtResource("3_1nqc0")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2(3844, 103)
-texture = ExtResource("4_oo0cm")
+texture = ExtResource("4_436bb")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAACACQAAAAPAA4AAAADACQAAAARAA4AAAAEACQAAAARAA4AAAAFACQAAAARAA4AAAAGACQAAAARAA4AAAAHACQAAAARAA4AAAAIACQAAAARAA4AAAAJACQAAAARAA4AAAAKACQAAAARAA4AAAALACQAAAARAA4AAAAMACQAAAARAA4AAAANACQAAAARAA4AAAAOACQAAAARAA4AAAAPACQAAAARAA4AAAAQACQAAAARAA4AAAARACQAAAARAA4AAAASACQAAAARAA4AAAATACQAAAATAA4AAAAUACQAAAARAA4AAAAVACQAAAARAA4AAAAWACQAAAARAA4AAAAXACQAAAARAA4AAAAYACQAAAARAA4AAAAZACQAAAARAA4AAAAaACQAAAARAA4AAAAbACQAAAARAA4AAAAcACQAAAARAA4AAAAdACQAAAARAA4AAAAeACQAAAARAA4AAAAfACQAAAARAA4AAAAgACQAAAARAA4AAAAhACQAAAARAA4AAAAiACQAAAARAA4AAAAjACQAAAARAA4AAAAkACQAAAARAA4AAAAlACQAAAARAA4AAAAmACQAAAARAA4AAAAnACQAAAARAA4AAAAoACQAAAARAA4AAAApACQAAAARAA4AAAAqACQAAAARAA4AAAArACQAAAARAA4AAAAsACQAAAARAA4AAAAtACQAAAARAA4AAAAuACQAAAARAA4AAAAvACQAAAARAA4AAAAwACQAAAARAA4AAAAxACQAAAARAA4AAAAyACQAAAARAA4AAAAzACQAAAARAA4AAAA0ACQAAAARAA4AAAA1ACQAAAARAA4AAAA2ACQAAAARAA4AAAA3ACQAAAARAA4AAAA4ACQAAAARAA4AAAA5ACQAAAARAA4AAAA6ACQAAAARAA4AAAA7ACQAAAARAA4AAAA8ACQAAAARAA4AAAA9ACQAAAARAA4AAAA+ACQAAAARAA4AAAA/ACQAAAARAA4AAABAACQAAAARAA4AAABBACQAAAARAA4AAABCACQAAAARAA4AAABDACQAAAARAA4AAABEACQAAAARAA4AAABFACQAAAARAA4AAABGACQAAAARAA4AAABHACQAAAARAA4AAABIACQAAAARAA4AAABJACQAAAARAA4AAABKACQAAAARAA4AAABLACQAAAARAA4AAABMACQAAAARAA4AAABNACQAAAARAA4AAABOACQAAAARAA4AAABPACQAAAARAA4AAABQACQAAAARAA4AAABRACQAAAARAA4AAABSACQAAAARAA4AAABTACQAAAARAA4AAABUACQAAAADAAUAAABVACQAAAADAAUAAABWACMAAAARAA4AAABXACMAAAARAA4AAABYACMAAAARAA4AAABZACMAAAARAA4AAABaACIAAAARAA4AAABbACIAAAARAA4AAABcACIAAAARAA4AAABdACIAAAARAA4AAABeACIAAAARAA4AAABfACIAAAARAA4AAABgACIAAAADAAUAAABhACEAAAARAA4AAABiACEAAAARAA4AAABjACEAAAARAA4AAABkACEAAAARAA4AAABlACEAAAARAA4AAABmACAAAAARAA4AAABnACAAAAARAA4AAABoACAAAAARAA4AAABpACAAAAARAA4AAABqACAAAAARAA4AAABrACAAAAARAA4AAABsACAAAAARAA4AAABtACAAAAARAA4AAABuACAAAAARAA4AAABvACAAAAARAA4AAABwACAAAAARAA4AAABxACAAAAARAA4AAAByACAAAAARAA4AAABzACAAAAARAA4AAAB0ACAAAAARAA4AAAB1ACAAAAARAA4AAAB2ACAAAAARAA4AAAB3ACAAAAARAA4AAAB4ACAAAAARAA4AAAB5ACAAAAARAA4AAAB6ACAAAAARAA4AAAB7ACAAAAARAA4AAAB8ACAAAAARAA4AAAB9ACAAAAARAA4AAAB+ACAAAAARAA4AAAB/ACAAAAARAA4AAACAACAAAAARAA4AAACBACAAAAARAA4AAACCACAAAAARAA4AAACDACAAAAARAA4AAACEACAAAAARAA4AAACFACAAAAARAA4AAACGACAAAAARAA4AAACHACAAAAARAA4AAACIACAAAAARAA4AAACJACAAAAARAA4AAACKACAAAAARAA4AAACLACAAAAARAA4AAACMACAAAAARAA4AAACNACAAAAARAA4AAACOACAAAAARAA4AAACPACAAAAARAA4AAACQACAAAAARAA4AAACRACAAAAARAA4AAACSACAAAAARAA4AAACTACAAAAARAA4AAACUACAAAAARAA4AAABlACAAAAAUAAQAAABgACEAAAAUAAQAAABVACMAAAAUAAQAAABhACIAAAADAAUAAABiACIAAAADAAUAAABjACIAAAADAAUAAABkACIAAAADAAUAAABlACIAAAADAAUAAAA=")
 tile_set = SubResource("TileSet_2tp86")
 
-[node name="Portal" parent="TileMapLayer" instance=ExtResource("7_522hw")]
-position = Vector2(734, 561)
+[node name="Portal" parent="." instance=ExtResource("6_ga4fq")]
+position = Vector2(57, 557)
 
-[node name="Player" parent="TileMapLayer" instance=ExtResource("5_oo0cm")]
-position = Vector2(56, 558)
+[node name="Player" parent="." instance=ExtResource("7_4olnb")]
+position = Vector2(103, 563)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Eagle" parent="Enemies" node_paths=PackedStringArray("marker1", "marker2") instance=ExtResource("5_d1vw2")]
+[node name="Eagle" parent="Enemies" node_paths=PackedStringArray("marker1", "marker2") instance=ExtResource("8_rlykr")]
 position = Vector2(288, 491)
 marker1 = NodePath("../../EaglePathPoint/Marker2D")
 marker2 = NodePath("../../EaglePathPoint/Marker2D2")
@@ -328,14 +324,3 @@ position = Vector2(332, 492)
 
 [node name="Marker2D2" type="Marker2D" parent="EaglePathPoint"]
 position = Vector2(229, 488)
-
-[node name="Guns" type="Node2D" parent="."]
-
-[node name="Gun" parent="Guns" instance=ExtResource("9_522hw")]
-position = Vector2(137, 567)
-
-[node name="Bullets" type="Node2D" parent="."]
-
-[node name="UI" parent="." instance=ExtResource("11_2tp86")]
-
-[connection signal="shoot" from="TileMapLayer/Player" to="." method="_on_player_shoot"]

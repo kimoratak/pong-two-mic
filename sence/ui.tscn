@@ -1,0 +1,359 @@
+[gd_scene load_steps=11 format=3 uid="uid://bpeuwdete2650"]
+
+[ext_resource type="Script" uid="uid://dl3hmlpgwodm4" path="res://script/ui.gd" id="1_3c2wh"]
+[ext_resource type="FontFile" uid="uid://c46ocep486vym" path="res://assets/fonts/retro.ttf" id="2_el4ri"]
+[ext_resource type="Texture2D" uid="uid://bb0kbeptpx7va" path="res://assets/ui/Button/Square/Default.png" id="3_yfml6"]
+[ext_resource type="Texture2D" uid="uid://cs13ysg4low4j" path="res://assets/ui/Button/Square/Hover.png" id="4_46xsd"]
+[ext_resource type="Texture2D" uid="uid://cewvsom2sg66h" path="res://assets/ui/Button/Icon/Home.png" id="5_jtjwu"]
+[ext_resource type="Texture2D" uid="uid://npagmjx5ai37" path="res://assets/ui/Button/Icon/Replay.png" id="6_0u3vm"]
+[ext_resource type="Texture2D" uid="uid://b0m04ji1k4rdk" path="res://assets/ui/Button/Icon/Play.png" id="7_yd5vc"]
+[ext_resource type="Texture2D" uid="uid://c0dx5rhpc66hd" path="res://assets/ui/Star/Active.png" id="8_b8mjp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2f4mx"]
+bg_color = Color(0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74alb"]
+bg_color = Color(1, 0.113725, 0.14902, 1)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_3c2wh")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -189.0
+offset_top = -63.0
+offset_right = 189.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ProgressBar" type="ProgressBar" parent="MarginContainer"]
+custom_minimum_size = Vector2(200, 20)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_2f4mx")
+theme_override_styles/fill = SubResource("StyleBoxFlat_74alb")
+value = 30.0
+show_percentage = false
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+offset_right = 1156.0
+offset_bottom = 79.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 880
+
+[node name="level1" type="Label" parent="MarginContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("2_el4ri")
+theme_override_font_sizes/font_size = 24
+text = "level "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="level2" type="Label" parent="MarginContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("2_el4ri")
+theme_override_font_sizes/font_size = 24
+text = "die"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+offset_left = 426.0
+offset_top = 274.0
+offset_right = 726.0
+offset_bottom = 357.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_yfml6")
+texture_hover = ExtResource("4_46xsd")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -32.5
+offset_right = 29.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_jtjwu")
+
+[node name="TextureButton2" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_yfml6")
+texture_hover = ExtResource("4_46xsd")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/TextureButton2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -32.5
+offset_right = 29.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_0u3vm")
+
+[node name="TextureButton3" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_yfml6")
+texture_hover = ExtResource("4_46xsd")
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/TextureButton3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -32.5
+offset_right = 29.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_yd5vc")
+
+[node name="LevelComplete" type="MarginContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -273.5
+offset_top = -211.5
+offset_right = 273.5
+offset_bottom = 211.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelComplete"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="LevelComplete/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.879667, 0.983765, 0.5884, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_el4ri")
+theme_override_font_sizes/font_size = 50
+text = "level  complete"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="LevelComplete/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="Star" type="HBoxContainer" parent="LevelComplete/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="LevelComplete/VBoxContainer/MarginContainer/Star"]
+layout_mode = 2
+texture = ExtResource("8_b8mjp")
+
+[node name="TextureRect2" type="TextureRect" parent="LevelComplete/VBoxContainer/MarginContainer/Star"]
+layout_mode = 2
+texture = ExtResource("8_b8mjp")
+
+[node name="TextureRect3" type="TextureRect" parent="LevelComplete/VBoxContainer/MarginContainer/Star"]
+layout_mode = 2
+texture = ExtResource("8_b8mjp")
+
+[node name="MarginContainer2" type="MarginContainer" parent="LevelComplete/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="Label2" type="Label" parent="LevelComplete/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.879667, 0.983765, 0.5884, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_el4ri")
+theme_override_font_sizes/font_size = 50
+text = "score : 999"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelComplete/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 30
+
+[node name="TextureButton" type="TextureButton" parent="LevelComplete/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_yfml6")
+texture_hover = ExtResource("4_46xsd")
+
+[node name="TextureRect" type="TextureRect" parent="LevelComplete/VBoxContainer/HBoxContainer/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -32.5
+offset_right = 29.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_jtjwu")
+
+[node name="TextureButton2" type="TextureButton" parent="LevelComplete/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_yfml6")
+texture_hover = ExtResource("4_46xsd")
+
+[node name="TextureRect" type="TextureRect" parent="LevelComplete/VBoxContainer/HBoxContainer/TextureButton2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -32.5
+offset_right = 29.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_0u3vm")
+
+[node name="TextureButton3" type="TextureButton" parent="LevelComplete/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_yfml6")
+texture_hover = ExtResource("4_46xsd")
+
+[node name="TextureRect" type="TextureRect" parent="LevelComplete/VBoxContainer/HBoxContainer/TextureButton3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -32.5
+offset_right = 29.0
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_yd5vc")
+
+[node name="GameOver" type="MarginContainer" parent="."]
+visible = false
+offset_left = 355.0
+offset_top = 212.0
+offset_right = 818.0
+offset_bottom = 516.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOver"]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="GameOver/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.879667, 0.983765, 0.5884, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_el4ri")
+theme_override_font_sizes/font_size = 50
+text = "Game over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="GameOver/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 90
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameOver/VBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+
+[node name="TextureButton" type="TextureButton" parent="GameOver/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_yfml6")
+texture_hover = ExtResource("4_46xsd")
+
+[node name="TextureRect" type="TextureRect" parent="GameOver/VBoxContainer/MarginContainer/HBoxContainer/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -34.5
+offset_right = 30.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_jtjwu")
+
+[node name="TextureButton2" type="TextureButton" parent="GameOver/VBoxContainer/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_yfml6")
+texture_hover = ExtResource("4_46xsd")
+
+[node name="TextureRect" type="TextureRect" parent="GameOver/VBoxContainer/MarginContainer/HBoxContainer/TextureButton2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -26.0
+offset_top = -34.5
+offset_right = 30.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_0u3vm")
