@@ -12,8 +12,10 @@ func _process(delta: float) -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://sence/level_select_menu.tscn")
-	print("start game")
+	$VBoxContainer.hide()
+	$Label.hide()
+	$LevelSelectMenu.show()
+
 	pass # Replace with function body.
 
 

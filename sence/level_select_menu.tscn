@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cduko1k88lslx" path="res://assets/ui/Button/Icon/ArrowLeft-Bold.png" id="5_17qa6"]
 
 [node name="LevelSelectMenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_17qa6")

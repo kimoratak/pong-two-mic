@@ -16,6 +16,7 @@ bg_color = Color(0.152941, 0.152941, 0.152941, 1)
 bg_color = Color(1, 0.113725, 0.14902, 1)
 
 [node name="UI" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_3c2wh")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -69,12 +70,11 @@ theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_fonts/font = ExtResource("2_el4ri")
 theme_override_font_sizes/font_size = 24
-text = "die"
+text = "score"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-visible = false
+[node name="PausedGame" type="HBoxContainer" parent="."]
 offset_left = 426.0
 offset_top = 274.0
 offset_right = 726.0
@@ -83,52 +83,52 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 30
 
-[node name="TextureButton" type="TextureButton" parent="HBoxContainer"]
+[node name="GotoMainMenu" type="TextureButton" parent="PausedGame"]
 layout_mode = 2
 texture_normal = ExtResource("3_yfml6")
 texture_hover = ExtResource("4_46xsd")
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/TextureButton"]
+[node name="TextureRect" type="TextureRect" parent="PausedGame/GotoMainMenu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -27.0
-offset_top = -32.5
-offset_right = 29.0
-offset_bottom = 25.5
+offset_left = -26.0
+offset_top = -34.5
+offset_right = 30.0
+offset_bottom = 23.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_jtjwu")
 
-[node name="TextureButton2" type="TextureButton" parent="HBoxContainer"]
+[node name="ResetLevel" type="TextureButton" parent="PausedGame"]
 layout_mode = 2
 texture_normal = ExtResource("3_yfml6")
 texture_hover = ExtResource("4_46xsd")
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/TextureButton2"]
+[node name="TextureRect" type="TextureRect" parent="PausedGame/ResetLevel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -27.0
-offset_top = -32.5
-offset_right = 29.0
-offset_bottom = 25.5
+offset_left = -26.0
+offset_top = -34.5
+offset_right = 30.0
+offset_bottom = 23.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_0u3vm")
 
-[node name="TextureButton3" type="TextureButton" parent="HBoxContainer"]
+[node name="PlayGame" type="TextureButton" parent="PausedGame"]
 layout_mode = 2
 texture_normal = ExtResource("3_yfml6")
 texture_hover = ExtResource("4_46xsd")
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/TextureButton3"]
+[node name="TextureRect" type="TextureRect" parent="PausedGame/PlayGame"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -166,7 +166,7 @@ size_flags_vertical = 4
 
 [node name="Label" type="Label" parent="LevelComplete/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.879667, 0.983765, 0.5884, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = -3
 theme_override_constants/shadow_offset_y = 4
@@ -204,7 +204,7 @@ theme_override_constants/margin_bottom = 20
 [node name="Label2" type="Label" parent="LevelComplete/VBoxContainer/MarginContainer2"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.879667, 0.983765, 0.5884, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 4
@@ -220,52 +220,52 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/separation = 30
 
-[node name="TextureButton" type="TextureButton" parent="LevelComplete/VBoxContainer/HBoxContainer"]
+[node name="GotoMainMenu" type="TextureButton" parent="LevelComplete/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_yfml6")
 texture_hover = ExtResource("4_46xsd")
 
-[node name="TextureRect" type="TextureRect" parent="LevelComplete/VBoxContainer/HBoxContainer/TextureButton"]
+[node name="TextureRect" type="TextureRect" parent="LevelComplete/VBoxContainer/HBoxContainer/GotoMainMenu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -27.0
-offset_top = -32.5
-offset_right = 29.0
-offset_bottom = 25.5
+offset_left = -26.0
+offset_top = -34.5
+offset_right = 30.0
+offset_bottom = 23.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_jtjwu")
 
-[node name="TextureButton2" type="TextureButton" parent="LevelComplete/VBoxContainer/HBoxContainer"]
+[node name="ResetLevel" type="TextureButton" parent="LevelComplete/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_yfml6")
 texture_hover = ExtResource("4_46xsd")
 
-[node name="TextureRect" type="TextureRect" parent="LevelComplete/VBoxContainer/HBoxContainer/TextureButton2"]
+[node name="TextureRect" type="TextureRect" parent="LevelComplete/VBoxContainer/HBoxContainer/ResetLevel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -27.0
-offset_top = -32.5
-offset_right = 29.0
-offset_bottom = 25.5
+offset_left = -26.0
+offset_top = -34.5
+offset_right = 30.0
+offset_bottom = 23.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_0u3vm")
 
-[node name="TextureButton3" type="TextureButton" parent="LevelComplete/VBoxContainer/HBoxContainer"]
+[node name="NextLevel" type="TextureButton" parent="LevelComplete/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_yfml6")
 texture_hover = ExtResource("4_46xsd")
 
-[node name="TextureRect" type="TextureRect" parent="LevelComplete/VBoxContainer/HBoxContainer/TextureButton3"]
+[node name="TextureRect" type="TextureRect" parent="LevelComplete/VBoxContainer/HBoxContainer/NextLevel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -290,7 +290,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GameOver"]
-visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="GameOver/VBoxContainer"]
@@ -318,12 +317,12 @@ layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 40
 
-[node name="TextureButton" type="TextureButton" parent="GameOver/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="GotoMainMenu" type="TextureButton" parent="GameOver/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_yfml6")
 texture_hover = ExtResource("4_46xsd")
 
-[node name="TextureRect" type="TextureRect" parent="GameOver/VBoxContainer/MarginContainer/HBoxContainer/TextureButton"]
+[node name="TextureRect" type="TextureRect" parent="GameOver/VBoxContainer/MarginContainer/HBoxContainer/GotoMainMenu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -338,12 +337,12 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_jtjwu")
 
-[node name="TextureButton2" type="TextureButton" parent="GameOver/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="ResetLevel" type="TextureButton" parent="GameOver/VBoxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 texture_normal = ExtResource("3_yfml6")
 texture_hover = ExtResource("4_46xsd")
 
-[node name="TextureRect" type="TextureRect" parent="GameOver/VBoxContainer/MarginContainer/HBoxContainer/TextureButton2"]
+[node name="TextureRect" type="TextureRect" parent="GameOver/VBoxContainer/MarginContainer/HBoxContainer/ResetLevel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -357,3 +356,12 @@ offset_bottom = 23.5
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_0u3vm")
+
+[connection signal="pressed" from="PausedGame/GotoMainMenu" to="." method="_on_goto_main_menu_pressed"]
+[connection signal="pressed" from="PausedGame/ResetLevel" to="." method="_on_reset_level_pressed"]
+[connection signal="pressed" from="PausedGame/PlayGame" to="." method="_on_play_game_pressed"]
+[connection signal="pressed" from="LevelComplete/VBoxContainer/HBoxContainer/GotoMainMenu" to="." method="_on_goto_main_menu_pressed"]
+[connection signal="pressed" from="LevelComplete/VBoxContainer/HBoxContainer/ResetLevel" to="." method="_on_reset_level_pressed"]
+[connection signal="pressed" from="LevelComplete/VBoxContainer/HBoxContainer/NextLevel" to="." method="_on_next_level_pressed"]
+[connection signal="pressed" from="GameOver/VBoxContainer/MarginContainer/HBoxContainer/GotoMainMenu" to="." method="_on_goto_main_menu_pressed"]
+[connection signal="pressed" from="GameOver/VBoxContainer/MarginContainer/HBoxContainer/ResetLevel" to="." method="_on_reset_level_pressed"]

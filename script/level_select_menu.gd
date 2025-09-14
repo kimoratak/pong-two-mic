@@ -12,10 +12,11 @@ func _process(delta: float) -> void:
 
 
 func _on_back_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://sence/main_menu.tscn")
-	pass # Replace with function body.
+	$".".hide()
+	$"../VBoxContainer".show()
+	$"../Label".show()
+
 
 
 func _on_go_to_level1_pressed() -> void:
 	get_tree().change_scene_to_file("res://sence/level_1.tscn")
-	pass # Replace with function body.

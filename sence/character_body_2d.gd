@@ -7,17 +7,15 @@ var facing_right := true
 var can_shoot := true
 var has_gun := false
 var vulnerable := true
-
 signal shoot(pos: Vector2, direction: bool)
-
 var health := 100
 
 func _process(_delta):
+	PausedGame()
 	get_input()
 	apply_gravity()
 	get_Facing_direction()
 	get_animation()
-	
 	velocity.x =direction_x * speed
 	move_and_slide()
 	check_death()
@@ -66,6 +64,10 @@ func _on_fire_timer_timeout() -> void:
 		child.hide()
 		
 func _ready():
+	$UI/GameOver.hide()
+	$UI/LevelComplete.hide()
+	$UI/PausedGame.hide()
+
 	for child in $Fire.get_children():
 		child.hide()
 
@@ -74,7 +76,7 @@ func get_damage(amount):
 		health -= amount
 		var tween = create_tween()
 		tween.tween_property($AnimatedSprite2D, "material:shader_parameter/amount", 1.0, 0.0)
-		tween.tween_property($AnimatedSprite2D, "material:shader_parameter/amount", 0.0, 0.1)#.set_delay(0.2)
+		tween.tween_property($AnimatedSprite2D, "material:shader_parameter/amount", 0.0, 0.1).set_delay(0.1)
 		vulnerable = false
 		$Times/InvincibilityTimer.start()
 		$Sounds/DamageSound.play()
@@ -84,4 +86,12 @@ func _on_invincibility_timer_timeout() -> void:
 	
 func check_death():
 	if health <= 0:
-		get_tree().quit()
+		$UI/GameOver.show()
+		get_tree().paused = true
+		
+
+func PausedGame():
+	if Input.is_action_just_pressed("PausedGame"):
+		get_tree().paused = true
+		$UI/PausedGame.show()
+		

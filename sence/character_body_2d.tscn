@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://crcft2cl5neu2"]
+[gd_scene load_steps=27 format=3 uid="uid://crcft2cl5neu2"]
 
 [ext_resource type="Texture2D" uid="uid://c3bi00k2ipmdm" path="res://assets/player/full-pong.png" id="1_bbwac"]
 [ext_resource type="Script" uid="uid://bgyjnh70sw0cc" path="res://sence/character_body_2d.gd" id="1_xepao"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://c601agvl43glg" path="res://assets/audio/synth_laser_03.ogg" id="4_brb2o"]
 [ext_resource type="AudioStream" uid="uid://cj1gf86o55pb0" path="res://assets/audio/jump.mp3" id="5_wjh5e"]
 [ext_resource type="AudioStream" uid="uid://dr0w1sbu01k" path="res://assets/audio/shot_01.ogg" id="6_0u0oh"]
+[ext_resource type="PackedScene" uid="uid://bpeuwdete2650" path="res://sence/ui.tscn" id="8_brb2o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_brb2o"]
 shader = ExtResource("2_tnxuq")
@@ -211,6 +212,10 @@ stream = ExtResource("5_wjh5e")
 [node name="DamageSound" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("6_0u0oh")
 
+[node name="UI" parent="." instance=ExtResource("8_brb2o")]
+
 [connection signal="timeout" from="Times/CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
 [connection signal="timeout" from="Times/FireTimer" to="." method="_on_fire_timer_timeout"]
 [connection signal="timeout" from="Times/InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]
+
+[editable path="UI"]
