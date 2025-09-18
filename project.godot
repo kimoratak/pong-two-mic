@@ -59,6 +59,11 @@ PausedGame={
 2d_physics/layer_5="Bullets"
 2d_physics/layer_6="Portal"
 
+[physics]
+
+2d/run_on_separate_thread=true
+2d/physics_engine="GodotPhysics2D"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

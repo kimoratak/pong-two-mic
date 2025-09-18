@@ -342,3 +342,4 @@ position = Vector2(137, 567)
 [connection signal="shoot" from="TileMapLayer/Player" to="." method="_on_player_shoot"]
 
 [editable path="TileMapLayer/Player"]
+[editable path="TileMapLayer/Player/UI"]

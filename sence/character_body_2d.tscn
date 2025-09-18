@@ -174,19 +174,22 @@ shape = SubResource("CapsuleShape2D_opofo")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
-position_smoothing_enabled = true
 
-[node name="Times" type="Node" parent="."]
+[node name="Timers" type="Node" parent="."]
 
-[node name="CooldownTimer" type="Timer" parent="Times"]
+[node name="CooldownTimer" type="Timer" parent="Timers"]
 wait_time = 0.4
 one_shot = true
 
-[node name="FireTimer" type="Timer" parent="Times"]
+[node name="FireTimer" type="Timer" parent="Timers"]
 wait_time = 0.1
 
-[node name="InvincibilityTimer" type="Timer" parent="Times"]
+[node name="InvincibilityTimer" type="Timer" parent="Timers"]
 wait_time = 0.6
+one_shot = true
+
+[node name="CoyoteTimer" type="Timer" parent="Timers"]
+wait_time = 0.15
 one_shot = true
 
 [node name="Fire" type="Node2D" parent="."]
@@ -213,9 +216,10 @@ stream = ExtResource("5_wjh5e")
 stream = ExtResource("6_0u0oh")
 
 [node name="UI" parent="." instance=ExtResource("8_brb2o")]
+visible = false
 
-[connection signal="timeout" from="Times/CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
-[connection signal="timeout" from="Times/FireTimer" to="." method="_on_fire_timer_timeout"]
-[connection signal="timeout" from="Times/InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]
+[connection signal="timeout" from="Timers/CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="Timers/FireTimer" to="." method="_on_fire_timer_timeout"]
+[connection signal="timeout" from="Timers/InvincibilityTimer" to="." method="_on_invincibility_timer_timeout"]
 
 [editable path="UI"]
