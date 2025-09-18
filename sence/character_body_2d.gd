@@ -39,6 +39,8 @@ func _ready():
 func _physics_process(delta: float):
 	# 1. ใช้แรงโน้มถ่วง
 	apply_gravity(delta)
+	pase_game()
+	reset_game()
 	
 	# 2. รับ Input และจัดการการกระโดด
 	handle_jump_input()
@@ -105,7 +107,7 @@ func update_after_move():
 	# --- Coyote Time ---
 	# ถ้าเฟรมที่แล้วอยู่บนพื้น แต่ตอนนี้ไม่อยู่ -> เริ่มนับเวลา Coyote Time
 	if was_on_floor and not is_on_floor():
-		coyote_timer.start()
+		$Timers/CoyoteTimer.start()
 	
 	was_on_floor = is_on_floor()
 
@@ -137,7 +139,8 @@ func get_animation():
 
 func check_death():
 	if health <= 0:
-		get_tree().quit()
+		get_tree().paused = true
+		$UI/GameOver.show()
 
 func get_damage(amount):
 	if vulnerable:
@@ -162,3 +165,17 @@ func _on_fire_timer_timeout() -> void:
 
 func _on_invincibility_timer_timeout() -> void:
 	vulnerable = true
+
+
+func pase_game():
+	if Input.is_action_just_pressed("PausedGame"):
+		get_tree().paused =true
+		$UI/PausedGame.show()
+		
+func reset_game():
+	if Input.is_action_just_pressed("reset_level"):
+		var currentlevel = get_tree().current_scene.scene_file_path
+		var level = currentlevel.to_int()
+		print(currentlevel)
+
+		get_tree().change_scene_to_file(currentlevel)
