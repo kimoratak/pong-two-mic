@@ -285,4 +285,7 @@ offset_bottom = 120.0
 texture_normal = ExtResource("5_17qa6")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_go_to_level1_pressed"]
+[connection signal="pressed" from="TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="TextureButton4" to="." method="_on_texture_button_4_pressed"]
 [connection signal="pressed" from="TextureButton5" to="." method="_on_back_menu_pressed"]
