@@ -605,3 +605,5 @@ position = Vector2(111, 634)
 shape = SubResource("WorldBoundaryShape2D_vab5n")
 
 [node name="UI" parent="." instance=ExtResource("13_vab5n")]
+
+[connection signal="shoot" from="TileMapLayer/Player" to="." method="_on_player_shoot"]

@@ -294,7 +294,7 @@ texture = ExtResource("1_2vrab")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.2, 0.2)
-motion_mirroring = Vector2(1440, 0)
+motion_mirroring = Vector2(3909.73, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(1925, 99)
@@ -302,7 +302,7 @@ texture = ExtResource("2_8a6dd")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(1440, 0)
+motion_mirroring = Vector2(5747.33, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(2890, 94)
@@ -310,7 +310,7 @@ texture = ExtResource("3_1nqc0")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.4, 0.4)
-motion_mirroring = Vector2(1440, 0)
+motion_mirroring = Vector2(7682.25, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 position = Vector2(3844, 103)
@@ -359,3 +359,5 @@ shape = SubResource("WorldBoundaryShape2D_ga4fq")
 
 [node name="UI" parent="." instance=ExtResource("13_ga4fq")]
 visible = false
+
+[connection signal="shoot" from="TileMapLayer/Player" to="." method="_on_player_shoot"]
