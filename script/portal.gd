@@ -11,7 +11,11 @@ func _on_body_entered(body: Node2D) -> void:
 	print(get_path())
 	if body.is_in_group("player"):
 		get_tree().paused = true
+<<<<<<< HEAD
 		$"../../UI/LevelComplete".show()
+=======
+		$"../Player/UI/LevelComplete".show()
+>>>>>>> origin/feature/level-1
 		#var currentlevel = get_tree().current_scene.scene_file_path
 		#print(currentlevel)
 		#var nextlevel = currentlevel.to_int() +1

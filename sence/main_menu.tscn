@@ -101,6 +101,7 @@ vertical_alignment = 1
 [node name="LevelSelectMenu" parent="." instance=ExtResource("4_xe1im")]
 visible = false
 
+<<<<<<< HEAD
 [node name="Setting" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 2.0
@@ -114,6 +115,8 @@ layout_mode = 2
 [node name="Panel" type="Panel" parent="Setting/MarginContainer"]
 layout_mode = 2
 
+=======
+>>>>>>> origin/feature/level-1
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_setting_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_pressed"]

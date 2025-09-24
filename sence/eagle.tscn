@@ -49,7 +49,11 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_821mo"]
 radius = 18.0278
 
+<<<<<<< HEAD
 [node name="Eagle" type="Area2D" groups=["enemy"]]
+=======
+[node name="Eagle" type="Area2D"]
+>>>>>>> origin/feature/level-1
 collision_layer = 4
 collision_mask = 19
 script = ExtResource("1_s85ds")

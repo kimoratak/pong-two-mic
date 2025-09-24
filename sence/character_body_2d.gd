@@ -29,10 +29,17 @@ signal shoot(pos: Vector2, direction: bool)
 #-----------------------------------------------------------------------------
 
 func _ready():
+<<<<<<< HEAD
 	#$"../../UI/LevelComplete".hide()
 	#$"../../UI/GameOver".hide()
 	#$"../../UI/PausedGame".hide()
 	#
+=======
+	$UI/LevelComplete.hide()
+	$UI/GameOver.hide()
+	$UI/PausedGame.hide()
+	
+>>>>>>> origin/feature/level-1
 	for child in $Fire.get_children():
 		child.hide()
 
@@ -140,8 +147,12 @@ func get_animation():
 func check_death():
 	if health <= 0:
 		get_tree().paused = true
+<<<<<<< HEAD
 		$"../../UI/GameOver".show()
 		
+=======
+		$UI/GameOver.show()
+>>>>>>> origin/feature/level-1
 
 func get_damage(amount):
 	if vulnerable:
@@ -171,7 +182,12 @@ func _on_invincibility_timer_timeout() -> void:
 func pase_game():
 	if Input.is_action_just_pressed("PausedGame"):
 		get_tree().paused =true
+<<<<<<< HEAD
 		$"../../UI/PausedGame".show()
+=======
+		$UI/PausedGame.show()
+		
+>>>>>>> origin/feature/level-1
 func reset_game():
 	if Input.is_action_just_pressed("reset_level"):
 		var currentlevel = get_tree().current_scene.scene_file_path

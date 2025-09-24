@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=17 format=4 uid="uid://b5xrpm2rvhlig"]
+=======
+[gd_scene load_steps=14 format=4 uid="uid://b5xrpm2rvhlig"]
+>>>>>>> origin/feature/level-1
 
 [ext_resource type="Script" uid="uid://mxb6qx2uv6kj" path="res://script/level.gd" id="1_whlqd"]
 [ext_resource type="Texture2D" uid="uid://6c8eo2lm8crh" path="res://assets/background/j4.png" id="2_7e3xm"]
@@ -11,8 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://caijohy0vuug6" path="res://sence/worm.tscn" id="9_h12xt"]
 [ext_resource type="PackedScene" uid="uid://i3lq0veq1xve" path="res://sence/eagle.tscn" id="10_0qxa1"]
 [ext_resource type="PackedScene" uid="uid://bm2h1q6udgp8o" path="res://sence/gun.tscn" id="11_gbvl3"]
+<<<<<<< HEAD
 [ext_resource type="PackedScene" uid="uid://3ofkp3wp4kme" path="res://sence/killzone.tscn" id="12_7e3xm"]
 [ext_resource type="PackedScene" uid="uid://bpeuwdete2650" path="res://sence/ui.tscn" id="13_3wod1"]
+=======
+>>>>>>> origin/feature/level-1
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_436bb"]
 texture = ExtResource("6_et5ym")
@@ -277,8 +284,11 @@ texture = ExtResource("6_et5ym")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_436bb")
 
+<<<<<<< HEAD
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3wod1"]
 
+=======
+>>>>>>> origin/feature/level-1
 [node name="level4" type="Node2D"]
 script = ExtResource("1_whlqd")
 
@@ -329,6 +339,12 @@ position = Vector2(56, 558)
 [node name="CooldownTimer" parent="TileMapLayer/Player/Timers" index="0"]
 wait_time = 0.2
 
+<<<<<<< HEAD
+=======
+[node name="UI" parent="TileMapLayer/Player" index="6"]
+visible = true
+
+>>>>>>> origin/feature/level-1
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Worm" parent="Enemies" instance=ExtResource("9_h12xt")]
@@ -354,6 +370,7 @@ position = Vector2(137, 567)
 
 [node name="Bullets" type="Node2D" parent="."]
 
+<<<<<<< HEAD
 [node name="Killzone" parent="." instance=ExtResource("12_7e3xm")]
 position = Vector2(111, 634)
 
@@ -365,3 +382,9 @@ shape = SubResource("WorldBoundaryShape2D_3wod1")
 [connection signal="shoot" from="TileMapLayer/Player" to="." method="_on_player_shoot"]
 
 [editable path="TileMapLayer/Player"]
+=======
+[connection signal="shoot" from="TileMapLayer/Player" to="." method="_on_player_shoot"]
+
+[editable path="TileMapLayer/Player"]
+[editable path="TileMapLayer/Player/UI"]
+>>>>>>> origin/feature/level-1

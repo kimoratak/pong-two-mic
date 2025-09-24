@@ -75,7 +75,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PausedGame" type="HBoxContainer" parent="."]
+<<<<<<< HEAD
 visible = false
+=======
+>>>>>>> origin/feature/level-1
 offset_left = 426.0
 offset_top = 274.0
 offset_right = 726.0
@@ -282,6 +285,10 @@ grow_vertical = 2
 texture = ExtResource("7_yd5vc")
 
 [node name="GameOver" type="MarginContainer" parent="."]
+<<<<<<< HEAD
+=======
+visible = false
+>>>>>>> origin/feature/level-1
 offset_left = 355.0
 offset_top = 212.0
 offset_right = 818.0
