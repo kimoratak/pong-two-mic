@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://ob4u8jgtbwhf"]
+[gd_scene load_steps=17 format=4 uid="uid://ob4u8jgtbwhf"]
 
 [ext_resource type="Script" uid="uid://mxb6qx2uv6kj" path="res://script/level.gd" id="1_0p5kj"]
 [ext_resource type="Texture2D" uid="uid://6c8eo2lm8crh" path="res://assets/background/j4.png" id="1_inkuo"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bm2h1q6udgp8o" path="res://sence/gun.tscn" id="9_522hw"]
 [ext_resource type="PackedScene" uid="uid://caijohy0vuug6" path="res://sence/worm.tscn" id="9_lwlb5"]
 [ext_resource type="PackedScene" uid="uid://3ofkp3wp4kme" path="res://sence/killzone.tscn" id="12_lwlb5"]
+[ext_resource type="PackedScene" uid="uid://bpeuwdete2650" path="res://sence/ui.tscn" id="13_sg2wc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2tp86"]
 texture = ExtResource("6_d1vw2")
@@ -325,9 +326,6 @@ position = Vector2(56, 558)
 [node name="CooldownTimer" parent="TileMapLayer/Player/Timers" index="0"]
 wait_time = 0.2
 
-[node name="UI" parent="TileMapLayer/Player" index="6"]
-visible = true
-
 [node name="Portal" parent="TileMapLayer" instance=ExtResource("7_522hw")]
 position = Vector2(734, 561)
 
@@ -362,7 +360,9 @@ position = Vector2(111, 634)
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_lwlb5")
 
+[node name="UI" parent="." instance=ExtResource("13_sg2wc")]
+
 [connection signal="shoot" from="TileMapLayer/Player" to="." method="_on_player_shoot"]
 
 [editable path="TileMapLayer/Player"]
-[editable path="TileMapLayer/Player/UI"]
+[editable path="UI"]
