@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm2h1q6udgp8o"]
+
+[ext_resource type="Script" uid="uid://clr5ct86hl8ry" path="res://script/gun.gd" id="1_3ptdn"]
+[ext_resource type="Texture2D" uid="uid://c3bi00k2ipmdm" path="res://assets/player/full-pong.png" id="2_i54na"]
+[ext_resource type="AudioStream" uid="uid://c2oiv5sfsqw0j" path="res://assets/audio/power_up_01.ogg" id="3_x1kb4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j46lf"]
+size = Vector2(10, 4)
+
+[node name="Gun" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_3ptdn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_i54na")
+region_enabled = true
+region_rect = Rect2(113.239, 3.5563, 14.2199, 9.74326)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_j46lf")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_x1kb4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
