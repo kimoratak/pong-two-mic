@@ -3,6 +3,8 @@ extends Area2D
 var health := 2
 var direction_x := 1
 @export var speed := 50
+@export var score_value: int = 10
+@onready var death_sound = $AudioStreamPlayer2D
 
 func _on_area_entered(area):
 	health -= 1
@@ -18,9 +20,18 @@ func _process(delta):
 	
 func check_death():
 	if health <= 0:
-		await $AudioStreamPlayer2D.finished
-		queue_free()
+		die()
 
+
+func die():
+	# ปิดการชนเพื่อไม่ให้รับความเสียหายเพิ่ม
+	$BorderArea.set_deferred("disabled", true)
+	speed = 0 # หยุดการเคลื่อนที่
+	death_sound.play()
+	await death_sound.finished # รอให้เสียงตายเล่นจบ
+	print("ENEMY: กำลังจะส่ง Signal died พร้อมคะแนน:", score_value)
+	ScoreManager.add_score(score_value)
+	queue_free()
 
 func _on_body_entered(body: Node2D) -> void:
 	if 'get_damage' in body:

@@ -175,7 +175,6 @@ func pase_game():
 func reset_game():
 	if Input.is_action_just_pressed("reset_level"):
 		var currentlevel = get_tree().current_scene.scene_file_path
-		var level = currentlevel.to_int()
 		print(currentlevel)
-
+		ScoreManager.reset_score()
 		get_tree().change_scene_to_file(currentlevel)

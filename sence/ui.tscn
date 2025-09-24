@@ -145,7 +145,6 @@ grow_vertical = 2
 texture = ExtResource("7_yd5vc")
 
 [node name="LevelComplete" type="MarginContainer" parent="."]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -282,6 +281,7 @@ grow_vertical = 2
 texture = ExtResource("7_yd5vc")
 
 [node name="GameOver" type="MarginContainer" parent="."]
+visible = false
 offset_left = 355.0
 offset_top = 212.0
 offset_right = 818.0

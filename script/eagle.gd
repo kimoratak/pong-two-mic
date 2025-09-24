@@ -3,7 +3,7 @@ extends Area2D
 
 
 @export var health := 3
-@export var score_value: int = 10
+@export var score_value: int = 100
 @export var marker1: Marker2D
 @export var marker2: Marker2D
 @export var speed = 25

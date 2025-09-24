@@ -12,6 +12,7 @@ extends CanvasLayer
 
 func _ready() -> void:
 	# ซ่อน UI ทั้งหมดที่ยังไม่ต้องการแสดง
+	$".".show()
 	paused_menu.hide()
 	game_over.hide()
 	level_complete.hide()
@@ -45,6 +46,7 @@ func _process(delta: float) -> void:
 	if is_instance_valid(player):
 		health_bar.value = player.health
 	on_score_updated(ScoreManager.current_score)
+	$LevelComplete/VBoxContainer/MarginContainer2/Label2.text = "score " + str(ScoreManager.current_score)
 	
 
 # --- ฟังก์ชันที่รอรับ Signal ต่างๆ ---
@@ -74,6 +76,7 @@ func _on_goto_main_menu_pressed() -> void:
 func _on_reset_level_pressed() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
+	ScoreManager.reset_score()
 
 func _on_next_level_pressed() -> void:
 	get_tree().paused = false
@@ -85,6 +88,7 @@ func _on_next_level_pressed() -> void:
 		# แก้ไข: path ที่ถูกต้อง "scene"
 		var next_level_path = "res://sence/level_" + str(next_level_num) + ".tscn"
 		get_tree().change_scene_to_file(next_level_path)
+	ScoreManager.reset_score()
 
 func _on_play_game_pressed() -> void:
 	get_tree().paused = false
