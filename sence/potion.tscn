@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyehtmci68vo1"]
+
+[ext_resource type="Texture2D" uid="uid://dsmx4bbnesnnr" path="res://assets/level/level4/Potion/potion_1.png" id="1_2rmt7"]
+[ext_resource type="Script" uid="uid://b8kebs5rttoxf" path="res://script/potion.gd" id="1_svits"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_svits"]
+radius = 46.0
+height = 132.0
+
+[node name="Potion" type="Area2D"]
+script = ExtResource("1_svits")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2rmt7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_svits")

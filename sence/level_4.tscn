@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://b5xrpm2rvhlig"]
+[gd_scene load_steps=19 format=4 uid="uid://b5xrpm2rvhlig"]
 
 [ext_resource type="Script" uid="uid://mxb6qx2uv6kj" path="res://script/level.gd" id="1_whlqd"]
 [ext_resource type="Texture2D" uid="uid://c8m2v7gyxtda6" path="res://assets/level/level4/Layers/pixelart_starfield.png" id="2_3wod1"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://bm2h1q6udgp8o" path="res://sence/gun.tscn" id="11_gbvl3"]
 [ext_resource type="PackedScene" uid="uid://3ofkp3wp4kme" path="res://sence/killzone.tscn" id="12_7e3xm"]
 [ext_resource type="PackedScene" uid="uid://bpeuwdete2650" path="res://sence/ui.tscn" id="13_3wod1"]
+[ext_resource type="PackedScene" uid="uid://cqjls03nhqfw0" path="res://sence/golem_boss.tscn" id="13_pnvvt"]
+[ext_resource type="PackedScene" uid="uid://d2u3w5o7hpiq0" path="res://sence/coin.tscn" id="14_pnvvt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bsecu"]
 texture = ExtResource("6_4xard")
@@ -467,14 +469,14 @@ tile_set = SubResource("TileSet_6pm65")
 position = Vector2(4893, 83)
 
 [node name="Player" parent="TileMapLayer" instance=ExtResource("8_bsecu")]
-position = Vector2(33, 546)
+position = Vector2(2702, 529)
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Guns" type="Node2D" parent="."]
 
 [node name="Gun" parent="Guns" instance=ExtResource("11_gbvl3")]
-position = Vector2(137, 567)
+position = Vector2(2811, 523)
 
 [node name="Bullets" type="Node2D" parent="."]
 
@@ -486,5 +488,13 @@ shape = SubResource("WorldBoundaryShape2D_3wod1")
 
 [node name="UI" parent="." instance=ExtResource("13_3wod1")]
 visible = false
+
+[node name="GolemBoss" parent="." instance=ExtResource("13_pnvvt")]
+position = Vector2(3544, 538)
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("14_pnvvt")]
+position = Vector2(2743, 471)
 
 [connection signal="shoot" from="TileMapLayer/Player" to="." method="_on_player_shoot"]

@@ -49,7 +49,7 @@ theme_override_constants/margin_right = 15
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 0
 theme_override_constants/separation = 880
 
 [node name="level2" type="Label" parent="MarginContainer2/HBoxContainer"]
