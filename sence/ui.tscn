@@ -145,7 +145,6 @@ grow_vertical = 2
 texture = ExtResource("7_yd5vc")
 
 [node name="LevelComplete" type="MarginContainer" parent="."]
-visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -182,6 +181,7 @@ layout_mode = 2
 theme_override_constants/margin_top = 10
 
 [node name="Star" type="HBoxContainer" parent="LevelComplete/VBoxContainer/MarginContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

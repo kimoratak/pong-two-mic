@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 # --- ประกาศตัวแปร Node ทั้งหมดไว้ด้านบน ---
-@onready var player = get_tree().get_first_node_in_group("player")
+@onready var player = Global
 @onready var enemy = get_tree().get_first_node_in_group("enemy")
 @onready var score_label = $MarginContainer2/HBoxContainer/level2
 @onready var level_label = $MarginContainer2/HBoxContainer/level1
@@ -9,6 +9,7 @@ extends CanvasLayer
 @onready var paused_menu = $PausedGame
 @onready var level_complete = $LevelComplete
 @onready var game_over = $GameOver
+@onready var stars_container: HBoxContainer = $LevelComplete/VBoxContainer/MarginContainer/Star
 
 func _ready() -> void:
 	# ซ่อน UI ทั้งหมดที่ยังไม่ต้องการแสดง
@@ -44,7 +45,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _process(delta: float) -> void:
 	if is_instance_valid(player):
-		health_bar.value = player.health
+		health_bar.value = player.player_health
 	on_score_updated(ScoreManager.current_score)
 	$LevelComplete/VBoxContainer/MarginContainer2/Label2.text = "score " + str(ScoreManager.current_score)
 	
@@ -61,6 +62,7 @@ func _on_player_died():
 
 # เพิ่ม: ฟังก์ชันนี้เอาไว้เชื่อมต่อกับ signal 'level_completed' จากด่าน
 func _on_level_completed():
+
 	level_complete.show()
 	await get_tree().create_timer(1.0).timeout
 	get_tree().paused = true
@@ -75,6 +77,7 @@ func _on_goto_main_menu_pressed() -> void:
 
 func _on_reset_level_pressed() -> void:
 	get_tree().paused = false
+	Global.player_health = Global.max_player_health
 	get_tree().reload_current_scene()
 	ScoreManager.reset_score()
 
@@ -103,3 +106,4 @@ func _get_level_number_from_path(scene_path: String) -> int:
 		if number_string.is_valid_int():
 			return number_string.to_int()
 	return 0
+	

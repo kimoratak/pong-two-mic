@@ -21,7 +21,7 @@ var was_on_floor := false
 var facing_right := true
 var has_gun := false
 var vulnerable := true
-var health := 100
+#var health := 100
 
 ## Signals
 signal shoot(pos: Vector2, direction: bool)
@@ -29,10 +29,7 @@ signal shoot(pos: Vector2, direction: bool)
 #-----------------------------------------------------------------------------
 
 func _ready():
-	#$"../../UI/LevelComplete".hide()
-	#$"../../UI/GameOver".hide()
-	#$"../../UI/PausedGame".hide()
-	#
+	Global.player_health = Global.max_player_health
 	for child in $Fire.get_children():
 		child.hide()
 
@@ -138,14 +135,14 @@ func get_animation():
 	$AnimatedSprite2D.flip_h = not facing_right
 
 func check_death():
-	if health <= 0:
+	if Global.player_health <= 0:
 		get_tree().paused = true
 		$"../../UI/GameOver".show()
 		
 
 func get_damage(amount):
 	if vulnerable:
-		health -= amount
+		Global.player_health -= amount
 		vulnerable = false
 		$Timers/InvincibilityTimer.start()
 		$Sounds/DamageSound.play()
@@ -156,9 +153,9 @@ func get_damage(amount):
 
 # --- Signal Callbacks ---
 
-func _on_cooldown_timer_timeout() -> void:
-	# ไม่ต้องตั้ง can_shoot = true แล้ว เพราะเราเช็คจาก is_stopped() ของ Timer ได้เลย
-	pass
+#func _on_cooldown_timer_timeout() -> void:
+	## ไม่ต้องตั้ง can_shoot = true แล้ว เพราะเราเช็คจาก is_stopped() ของ Timer ได้เลย
+	#pass
 
 func _on_fire_timer_timeout() -> void:
 	for child in $Fire.get_children():

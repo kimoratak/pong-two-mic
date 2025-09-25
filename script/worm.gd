@@ -25,9 +25,7 @@ func check_death():
 
 func die():
 	# ปิดการชนเพื่อไม่ให้รับความเสียหายเพิ่ม
-	$BorderArea.set_deferred("disabled", true)
-	$LeftCliffArea.set_deferred("disabled", true)
-	$RightCliffArea.set_deferred("disabled", true)
+	
 	speed = 0 # หยุดการเคลื่อนที่
 	death_sound.play()
 	await death_sound.finished # รอให้เสียงตายเล่นจบ

@@ -209,13 +209,16 @@ texture = ExtResource("3_tnxuq")
 
 [node name="fireSound" type="AudioStreamPlayer2D" parent="Sounds"]
 stream = ExtResource("4_brb2o")
+bus = &"SFX"
 area_mask = 2
 
 [node name="JumpSound" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("5_wjh5e")
+bus = &"SFX"
 
 [node name="DamageSound" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("6_0u0oh")
+bus = &"SFX"
 
 [connection signal="timeout" from="Timers/CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
 [connection signal="timeout" from="Timers/FireTimer" to="." method="_on_fire_timer_timeout"]

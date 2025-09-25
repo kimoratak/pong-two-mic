@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://byab211xg5pxh"]
+[gd_scene load_steps=22 format=4 uid="uid://byab211xg5pxh"]
 
 [ext_resource type="Script" uid="uid://mxb6qx2uv6kj" path="res://script/level.gd" id="1_n0t40"]
 [ext_resource type="Texture2D" uid="uid://dw7huidp80yxh" path="res://assets/level/level3/Background layers/florest downt.png" id="2_dyoaw"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bm2h1q6udgp8o" path="res://sence/gun.tscn" id="11_rl1ma"]
 [ext_resource type="PackedScene" uid="uid://3ofkp3wp4kme" path="res://sence/killzone.tscn" id="12_y0tt4"]
 [ext_resource type="PackedScene" uid="uid://bpeuwdete2650" path="res://sence/ui.tscn" id="13_vab5n"]
+[ext_resource type="PackedScene" uid="uid://d2u3w5o7hpiq0" path="res://sence/coin.tscn" id="17_cjju4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_436bb"]
 texture = ExtResource("6_t61qe")
@@ -571,15 +572,46 @@ tile_set = SubResource("TileSet_6pm65")
 position = Vector2(66, 523)
 
 [node name="Portal" parent="TileMapLayer" instance=ExtResource("7_cjju4")]
-position = Vector2(734, 561)
+position = Vector2(10111, 269)
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Worm" parent="Enemies" instance=ExtResource("9_xq515")]
-position = Vector2(105, 508)
+position = Vector2(185, 476)
+
+[node name="Worm2" parent="Enemies" instance=ExtResource("9_xq515")]
+position = Vector2(698, 444)
+
+[node name="Worm3" parent="Enemies" instance=ExtResource("9_xq515")]
+position = Vector2(1511, 413)
 
 [node name="Eagle" parent="Enemies" node_paths=PackedStringArray("marker1", "marker2") instance=ExtResource("10_8wrr2")]
 position = Vector2(288, 491)
+marker1 = NodePath("../../EaglePathPoint/Marker2D")
+marker2 = NodePath("../../EaglePathPoint/Marker2D2")
+
+[node name="Eagle2" parent="Enemies" node_paths=PackedStringArray("marker1", "marker2") instance=ExtResource("10_8wrr2")]
+position = Vector2(1613, 332)
+marker1 = NodePath("../../EaglePathPoint/Marker2D")
+marker2 = NodePath("../../EaglePathPoint/Marker2D2")
+
+[node name="Eagle3" parent="Enemies" node_paths=PackedStringArray("marker1", "marker2") instance=ExtResource("10_8wrr2")]
+position = Vector2(2289, 299)
+marker1 = NodePath("../../EaglePathPoint/Marker2D")
+marker2 = NodePath("../../EaglePathPoint/Marker2D2")
+
+[node name="Eagle4" parent="Enemies" node_paths=PackedStringArray("marker1", "marker2") instance=ExtResource("10_8wrr2")]
+position = Vector2(3095, 303)
+marker1 = NodePath("../../EaglePathPoint/Marker2D")
+marker2 = NodePath("../../EaglePathPoint/Marker2D2")
+
+[node name="Eagle5" parent="Enemies" node_paths=PackedStringArray("marker1", "marker2") instance=ExtResource("10_8wrr2")]
+position = Vector2(6504, 18)
+marker1 = NodePath("../../EaglePathPoint/Marker2D")
+marker2 = NodePath("../../EaglePathPoint/Marker2D2")
+
+[node name="Eagle6" parent="Enemies" node_paths=PackedStringArray("marker1", "marker2") instance=ExtResource("10_8wrr2")]
+position = Vector2(8764, 56)
 marker1 = NodePath("../../EaglePathPoint/Marker2D")
 marker2 = NodePath("../../EaglePathPoint/Marker2D2")
 
@@ -590,6 +622,36 @@ position = Vector2(332, 492)
 
 [node name="Marker2D2" type="Marker2D" parent="EaglePathPoint"]
 position = Vector2(229, 488)
+
+[node name="Marker2D3" type="Marker2D" parent="EaglePathPoint"]
+position = Vector2(1698, 328)
+
+[node name="Marker2D4" type="Marker2D" parent="EaglePathPoint"]
+position = Vector2(1536, 330)
+
+[node name="Marker2D5" type="Marker2D" parent="EaglePathPoint"]
+position = Vector2(2374, 295)
+
+[node name="Marker2D6" type="Marker2D" parent="EaglePathPoint"]
+position = Vector2(2212, 297)
+
+[node name="Marker2D7" type="Marker2D" parent="EaglePathPoint"]
+position = Vector2(3326, 303)
+
+[node name="Marker2D8" type="Marker2D" parent="EaglePathPoint"]
+position = Vector2(2989, 301)
+
+[node name="Marker2D9" type="Marker2D" parent="EaglePathPoint"]
+position = Vector2(6735, 18)
+
+[node name="Marker2D10" type="Marker2D" parent="EaglePathPoint"]
+position = Vector2(6398, 16)
+
+[node name="Marker2D11" type="Marker2D" parent="EaglePathPoint"]
+position = Vector2(8995, 56)
+
+[node name="Marker2D12" type="Marker2D" parent="EaglePathPoint"]
+position = Vector2(8658, 54)
 
 [node name="Guns" type="Node2D" parent="."]
 
@@ -605,5 +667,83 @@ position = Vector2(111, 634)
 shape = SubResource("WorldBoundaryShape2D_vab5n")
 
 [node name="UI" parent="." instance=ExtResource("13_vab5n")]
+visible = false
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(191, 401)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(191, 545)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(350, 392)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(736, 339)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(881, 380)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(1047, 368)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(1221, 391)
+
+[node name="Coin8" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(1396, 388)
+
+[node name="Coin9" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(1545, 314)
+
+[node name="Coin10" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(1670, 310)
+
+[node name="Coin11" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(1922, 310)
+
+[node name="Coin12" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(2077, 415)
+
+[node name="Coin13" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(2230, 520)
+
+[node name="Coin14" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(2345, 470)
+
+[node name="Coin15" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(2328, 293)
+
+[node name="Coin17" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(2574, 289)
+
+[node name="Coin18" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(2511, 511)
+
+[node name="Coin19" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(2935, 296)
+
+[node name="Coin20" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(3143, 410)
+
+[node name="Coin21" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(3523, 327)
+
+[node name="Coin22" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(3826, 346)
+
+[node name="Coin23" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(4171, 240)
+
+[node name="Coin24" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(4071, 434)
+
+[node name="Coin25" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(4697, 315)
+
+[node name="Coin16" parent="Coins" instance=ExtResource("17_cjju4")]
+position = Vector2(2459, 291)
 
 [connection signal="shoot" from="TileMapLayer/Player" to="." method="_on_player_shoot"]

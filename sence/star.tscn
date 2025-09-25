@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://caylarm52sfgb"]
+
+[ext_resource type="Script" uid="uid://barbjv40jjqjx" path="res://script/star.gd" id="1_d1fce"]
+
+[node name="Star" type="HBoxContainer"]
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_d1fce")
