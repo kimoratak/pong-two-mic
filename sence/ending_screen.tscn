@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce1m50s5yjpb2"]
+
+[ext_resource type="Script" uid="uid://fdghfixof0nx" path="res://rich_text_label.gd" id="1_qfdki"]
+[ext_resource type="Texture2D" uid="uid://70ye8eeynlu7" path="res://assets/level/level4/doy.jpg" id="2_w03o2"]
+
+[node name="EndingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = -4.0
+offset_right = 1166.0
+offset_bottom = 658.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 197.0
+offset_top = 395.0
+offset_right = 996.0
+offset_bottom = 616.0
+theme_override_font_sizes/normal_font_size = 51
+script = ExtResource("1_qfdki")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 380.0
+offset_top = 16.0
+offset_right = 747.0
+offset_bottom = 376.0
+texture = ExtResource("2_w03o2")
+expand_mode = 1
